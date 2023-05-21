@@ -66,6 +66,7 @@ for inFilePath in ${filesToConvert[@]}; do
     # Sanity check to stop us repeating ourselves, should add a -f command flag to allow overwrite or something
     if [ -f ${outFilePath} ]; then
         echo "└[SKIP] Skipped conversion as '${outFilePath}' already exists."
+        echo ""
         continue
     fi
 
