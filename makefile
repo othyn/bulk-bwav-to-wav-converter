@@ -43,3 +43,8 @@ reset:
 	@ printf "\n"
 
 	@ echo "Done."
+
+.PHONY: convert
+convert:
+	@ echo "Converting..."
+	@ ( test -d .venv && . .venv/bin/activate && python src/convert.py ) || echo "[[ ERROR ]] Please check the output and if required run 'make setup' if its a dependency issue."
