@@ -1,3 +1,9 @@
+# Project
+in/*
+out/*
+!in/.gitkeep
+!out/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
