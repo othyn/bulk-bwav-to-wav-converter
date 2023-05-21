@@ -1,5 +1,9 @@
 .PHONY: setup
 setup:
+	@ echo "Building brstm_converter from source..."
+	@ ( test -f brstm_converter && echo "> brstm_converter already compiled." ) || ( g++ -O2 -std=c++0x openrevolution/src/converter.cpp -o brstm_converter -w -Wall && echo "> brstm_converter compiled!" )
+	@ printf "\n"
+
 	@ echo "Setting up Python venv..."
 	@ ( test -d .venv && echo "> .venv already setup." ) || ( python -m venv .venv && python -m pip install --upgrade pip && echo "> .venv setup!" )
 	@ printf "\n"
@@ -26,6 +30,10 @@ reqs:
 
 .PHONY: reset
 reset:
+	@ echo "Deleting brstm_converter built binary..."
+	@ ( test -f brstm_converter && rm -rf brstm_converter && echo "> brstm_converter deleted." ) || echo "> brstm_converter already deleted."
+	@ printf "\n"
+
 	@ echo "Deactivating Python venv..."
 	@ ( test -d .venv && . .venv/bin/activate && deactivate && echo "> Python venv deactivated." ) || echo "> Python venv already deactivated."
 	@ printf "\n"

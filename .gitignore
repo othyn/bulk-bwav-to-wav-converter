@@ -1,4 +1,5 @@
 # Project
+brstm_converter
 in/*
 out/*
 !in/.gitkeep
