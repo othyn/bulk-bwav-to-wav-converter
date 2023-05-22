@@ -11,22 +11,8 @@ if [ ! -f brstm_converter ]; then
     exit 1
 fi
 
-# Determine find binary to use
-findCmd=find
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    if command -v gfind >/dev/null 2>&1; then
-        findCmd=gfind
-    else
-        echo "[ERR] GNU find is required for this script."
-        echo "[ERR] macOS ships with a BSD version of 'find', which is a pain in the arse."
-        echo "[ERR] Please run 'brew install findutils' first to install GNU find."
-        exit 1
-    fi
-fi
-
 # Gather a list of files to convert, avoiding argument expansion faults with large amounts of files
-filesToConvert=(`${findCmd} in -maxdepth 1 -name "*.bwav"`)
+filesToConvert=(`find in -maxdepth 1 -name "*.bwav"`)
 
 # Get the amount of items in the array for sanity checking and helpful command progress output
 amountOfFilesToConvert=${#filesToConvert[@]}
