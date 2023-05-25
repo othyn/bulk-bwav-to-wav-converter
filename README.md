@@ -52,6 +52,7 @@ This is purely for backup purposes and should only be done using legal cartridge
    - For reference;
      - A 5900X with NVMe storage, it took about 5 minutes.
      - It was a similar time on my M1 Pro machine.
+     - Depending on the game, the resulting dump can be in the 10's of gigabytes.
 5. Once complete, it will open the dumped NSP RomFS contents location with your OS's file explorer.
    - This is placed into a dumps directory parented by the game ID within the Yuzu application directories.
    - From here you can then navigate and find any audio/sound/music assets you wish to backup.
