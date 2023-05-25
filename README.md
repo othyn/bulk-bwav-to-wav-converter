@@ -36,3 +36,22 @@ make reset
 2. Run `make convert`.
 3. Depending on how many files you have, this could be over in an instant or take several minutes, so find something to pass the time.
 4. All converted `*.wav` files will be output to the `out` directory with the same file name as the source `*.bwav` file, just with the `*.wav` extension instead.
+
+### Quick guide for audio/sound/music asset backups from NSP's
+
+This is purely for backup purposes and should only be done using legal cartridges you own.
+
+1. Make sure Yuzu is setup and installed on your machine.
+   - This is by far the easiest method, after I went down many ancient forum posts and archived GitHub repos trying to chase down an up to date resource.
+   - Finally ended up seeing a YouTube video just saying 'use Yuzu'. Sure enough, its a right click option in Yuzu...
+2. From within Yuzu, right click the game (that you've legally backed up from your cartridge and imported into Yuzu) you wish to backup the audio/sound/music assets for and click 'Dump RomFS' > 'Dump RomFS'.
+3. On the popup window, select 'Full'.
+   - Selecting 'Skeleton' will simply dump the folder structure only, which is useful for quickly seeing if there is a directory you like the look of.
+   - There is no option to customise the dump location, it will dump into a dumps folder in the Yuzu application directory and it will automatically open it when its complete.
+4. It will take a little while to dump.
+   - For reference;
+     - A 5900X with NVMe storage, it took about 5 minutes.
+     - It was a similar time on my M1 Pro machine.
+5. Once complete, it will open the dumped NSP RomFS contents location with your OS's file explorer.
+   - This is placed into a dumps directory parented by the game ID within the Yuzu application directories.
+   - From here you can then navigate and find any audio/sound/music assets you wish to backup.
