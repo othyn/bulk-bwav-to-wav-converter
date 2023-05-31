@@ -37,7 +37,34 @@ make reset
 3. Depending on how many files you have, this could be over in an instant or take several minutes, so find something to pass the time.
 4. All converted `*.wav` files will be output to the `out` directory with the same file name as the source `*.bwav` file, just with the `*.wav` extension instead.
 
-### Quick guide for audio/sound/music asset backups from NSP's
+## Quickly organise the output files
+
+Once all of your converted files reside within `out/*.wav` it can be a pain to sort through the large amount of files that there are, often 20,000+.
+
+That's where the next command, `make organise`, comes in.
+
+This will run through all of the output files and organise them into the following aptly named directories:
+
+- `out/Less than 5 seconds`
+- `out/Less than 15 seconds`
+- `out/Less than 30 seconds`
+- `out/Greater than 30 seconds`
+
+This should allow you to more easily find what you're looking for.
+
+This does require [ffmpeg](https://ffmpeg.org/) to be installed and available on your `$PATH`, as it uses `ffprobe` to query the duration of the file from the metadata.
+
+On macOS, this can easily be achieved via [brew](https://brew.sh/): `brew install ffmpeg`.
+
+### macOS Finder quirkiness
+
+Again, Apple hiding away features via 'intuitive' design. macOS will only display audio based columns in Finder's list view if the parent directory is named `Music`.
+
+So, my advice is to drop all the converted `*.wav` files into a new `Music` directory (you can quickly create one in the `out` directory), then right click on the list headers and select 'Duration' under the newly presented column options. This trick also works with naming 'Movies' and "Photo's" to reveal more options for dealing with video and photo file specific sorting options.
+
+This is far from the most 'intuitive' design and crazy that its limited by parent directory name.
+
+## Quick guide for audio/sound/music asset backups from NSP's
 
 This is purely for backup purposes and should only be done using legal cartridges you own.
 

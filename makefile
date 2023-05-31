@@ -18,3 +18,8 @@ reset:
 convert:
 	@ echo "Converting..."
 	@ src/convert.sh
+
+.PHONY: organise
+organise:
+	@ echo "Organising..."
+	@ src/organise.sh

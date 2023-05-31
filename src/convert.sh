@@ -35,17 +35,17 @@ for inFilePath in ${filesToConvert[@]}; do
     # Increment the ticker
     ((currentFileIdx++))
 
-    # Extract the file name from the in file path so we can generate the outfile path
-    inFileName=$(basename ${inFilePath})
-
-    # Generate the out file path, swapping the file extension
-    outFilePath="out/${inFileName%.bwav}.wav"
-
     # Locale format the command output current file number
     currentFileIdxPretty=$(printf "%'.0f" ${currentFileIdx})
 
     # Using the current length of the finishing number, output and pad the current progress
     printf "┌[PROG] %${#amountOfFilesToConvertPretty}s / %s\n" ${currentFileIdxPretty} ${amountOfFilesToConvertPretty}
+
+    # Extract the file name from the in file path so we can generate the outfile path
+    inFileName=$(basename ${inFilePath})
+
+    # Generate the out file path, swapping the file extension
+    outFilePath="out/${inFileName%.bwav}.wav"
 
     echo "├[CONV] Converting '${inFilePath}' to '${outFilePath}'..."
 
