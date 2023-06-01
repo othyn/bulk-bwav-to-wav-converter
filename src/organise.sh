@@ -51,8 +51,8 @@ for outFilePath in ${filesToOrganise[@]}; do
     durationInSeconds=$(printf "%'.2f" ${durationInSeconds})
     durationInSecondsInt=$(printf "%'.0f" ${durationInSeconds})
 
-    echo "├[FILE] ${outFileName}"
-    echo "├[DURA] ${durationInSeconds} seconds"
+    echo "├─[FILE] ${outFileName}"
+    echo "├─[DURA] ${durationInSeconds} seconds"
 
     if [ "${durationInSecondsInt}" -le 5 ]; then
         durationDirName="Less than 5 seconds"
@@ -74,14 +74,14 @@ for outFilePath in ${filesToOrganise[@]}; do
     if [ ! -f "${organisedPath}" ]; then
         mv "${outFilePath}" "${organisedPath}"
     else
-        echo "└[SKIP] Skipped organisation as '${organisedPath}' already exists."
+        echo "└─[SKIP] Skipped organisation as '${organisedPath}' already exists."
         echo ""
         continue
     fi
 
-    echo "├[ORGN] Determination: ${durationDirName}"
-    echo "├[ORGN] Moved '${outFilePath}' to '${organisedPath}'"
-    echo "└[DONE] Organised."
+    echo "├─[ORGN] Determination: ${durationDirName}"
+    echo "├─[ORGN] Moved '${outFilePath}' to '${organisedPath}'"
+    echo "└─[DONE] Organised."
     echo ""
 done
 

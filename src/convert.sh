@@ -47,11 +47,11 @@ for inFilePath in ${filesToConvert[@]}; do
     # Generate the out file path, swapping the file extension
     outFilePath="out/${inFileName%.bwav}.wav"
 
-    echo "├[CONV] Converting '${inFilePath}' to '${outFilePath}'..."
+    echo "├─[CONV] Converting '${inFilePath}' to '${outFilePath}'..."
 
     # Sanity check to stop us repeating ourselves, should add a -f command flag to allow overwrite or something
     if [ -f ${outFilePath} ]; then
-        echo "└[SKIP] Skipped conversion as '${outFilePath}' already exists."
+        echo "└─[SKIP] Skipped conversion as '${outFilePath}' already exists."
         echo ""
         continue
     fi
@@ -59,7 +59,7 @@ for inFilePath in ${filesToConvert[@]}; do
     # Convert the file, supressing only stdout, we want stderr
     ./brstm_converter ${inFilePath} -o ${outFilePath} >/dev/null
 
-    echo "└[DONE] Conversion successful."
+    echo "└─[DONE] Conversion successful."
     echo ""
 done
 
